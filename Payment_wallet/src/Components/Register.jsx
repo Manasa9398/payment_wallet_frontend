@@ -1,14 +1,3 @@
-// import React from 'react'
-
-// function Register() {
-//   return (
-//     <div>
-//         <h2>Register page</h2>
-//         <p>welcome to the registration page</p>
-//     </div>
-//   )
-// }
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
