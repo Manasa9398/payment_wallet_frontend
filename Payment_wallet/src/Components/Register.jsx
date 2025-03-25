@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Import Axios for API requests
+import axios from "axios"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Register() {
@@ -9,7 +9,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // Function to handle registration
+  
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -65,7 +65,7 @@ function Register() {
 
 export default Register;
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Import Axios for API requests
+import axios from "axios"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Register() {
@@ -73,7 +73,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // Function to handle registration
+  
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -83,11 +83,11 @@ function Register() {
         password,
       });
 
-      console.log("Response:", response.data); // Debugging
-      alert(response.data.message); // Show success message
-      navigate("/"); // Redirect to login page
+      console.log("Response:", response.data); 
+      alert(response.data.message);
+      navigate("/"); 
     } catch (error) {
-      console.error("Error:", error.response || error.message); // Debugging
+      console.error("Error:", error.response || error.message); 
       alert(error.response?.data?.message || "Registration failed!");
     }
   };
