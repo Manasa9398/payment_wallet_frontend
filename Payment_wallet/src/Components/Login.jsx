@@ -1,17 +1,3 @@
-// // import React from 'rea
-// import React from 'react'
-
-// function Login() {
-//   return (
-//     <div>
-//         <h1>LOGIN PAGE</h1>
-//         <p>Hai this is my login page</p>
-
-//     </div>
-//   )
-// }
-
-// export default Login
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
