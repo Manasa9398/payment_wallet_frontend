@@ -19,11 +19,11 @@ function Register() {
         password,
       });
 
-      console.log("Response:", response.data); // Debugging
-      alert(response.data.message); // Show success message
-      navigate("/"); // Redirect to login page
+      console.log("Response:", response.data); 
+      alert(response.data.message); 
+      navigate("/"); 
     } catch (error) {
-      console.error("Error:", error.response || error.message); // Debugging
+      console.error("Error:", error.response || error.message);
       alert(error.response?.data?.message || "Registration failed!");
     }
   };
