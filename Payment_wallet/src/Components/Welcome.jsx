@@ -1,13 +1,3 @@
-// import React from 'react'
-
-// const Welcome=(props)=> {
-//   return (
-//     <h3>welcome {props.name}</h3>
-
-// )
-// }
-
-// export default Welcome
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
