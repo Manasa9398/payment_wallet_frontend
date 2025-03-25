@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 const Welcome = (props) => {
   const navigate = useNavigate();
 
-  // Check if the user is authenticated
+ 
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
     if (!isAuthenticated) {
-      navigate("/login"); // Redirect to login if not authenticated
+      navigate("/login"); 
     }
   }, [navigate]);
 
