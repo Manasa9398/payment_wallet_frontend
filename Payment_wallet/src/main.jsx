@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
-import Welcome from "./Components/Welcome"; // Now acts as Dashboard
-import "./index.css";
+import Welcome from "./Components/Welcome"; 
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
