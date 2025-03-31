@@ -1,31 +1,29 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
-const Welcome = (props) => {
-  const navigate = useNavigate();
-
- 
-  useEffect(() => {
-    const isAuthenticated = localStorage.getItem("isAuthenticated");
-    if (!isAuthenticated) {
-      navigate("/login"); 
-    }
-  }, [navigate]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
-    navigate("/login");
-  };
-
+import { Container, Row, Col, Button, Image } from 'react-bootstrap';
+const Welcome = () => {
   return (
-    <div className="container mt-5 text-center">
-      <h3>Welcome, {props.name}!</h3>
-      <p>You have successfully logged in to your dashboard.</p>
-      <button className="btn btn-danger" onClick={handleLogout}>
-        Logout
-      </button>
+    <div className="bg-light text-center py-5">
+      <Container>
+        <Row className="align-items-center">
+          <Col md={6}>
+            <h1 className="display-4">Fast & Secure Online Payments</h1>
+            <p className="lead">
+              Experience seamless transactions with PayEase. Whether you're a small business or an enterprise, our platform offers the tools you need to manage payments effortlessly.
+            </p>
+            <ul className="list-unstyled">
+              <li>✔️ Easy integration with your website or app</li>
+              <li>✔️ Accept payments globally in multiple currencies</li>
+              <li>✔️ Real-time transaction monitoring and analytics</li>
+            </ul>
+
+          </Col>
+          <Col md={6}>
+            <Image src="https://via.placeholder.com/400x300" alt="Online payment illustration" fluid />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
-};
-
-export default Welcome;
+  };
+  
+  export default Welcome;
+  
