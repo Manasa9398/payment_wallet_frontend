@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Login from "./Components/Login";
-import Signup from "./Components/Register";
-import Home from "./Components/Welcome";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Home from "./pages/home";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Transaction from './Components/Counter'; 
+import Transaction from './pages/transation'; 
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 
 function App() {
@@ -33,13 +33,13 @@ function App() {
                 <div >
                     <Navbar bg="primary" variant="dark" expand="md" sticky="top">
                         <Container>
-                            <Navbar.Brand as={Link} to="/">Digital_payment</Navbar.Brand>
+                            <Navbar.Brand as={Link} to="/">Fast-Pay</Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbar-nav" />
                             <Navbar.Collapse id="navbar-nav">
                                 <Nav className="ml-auto">
                                     {user ? (
                                         <>
-                                        <Nav.Link as={Link} to="/Counter">Home</Nav.Link>
+                                        <Nav.Link as={Link} to="/transaction">Home</Nav.Link>
                                             <NavDropdown title={<><i className="bi bi-person-circle"></i> {user.email}</>} id="nav-dropdown">
                                                 <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
                                             </NavDropdown>
@@ -47,7 +47,7 @@ function App() {
                                     ) : (
                                         <>
                                             <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                                            <Nav.Link as={Link} to="/register">Signup</Nav.Link>
+                                            <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
                                         </>
                                     )}
                                 </Nav>
@@ -57,8 +57,8 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/counter" element={<Counter />} />
+                        <Route path="/signup" element={<Signup />} />
+                        <Route path="/transaction" element={<Transaction />} />
                     </Routes>
                 </div>
             </Router>

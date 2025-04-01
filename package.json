@@ -3,6 +3,7 @@
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "mongoose": "^8.13.1",
     "react-router-dom": "^7.4.0"
   },
   "name": "payment_frontend",
