@@ -4,7 +4,8 @@
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "mongoose": "^8.13.1",
-    "react-router-dom": "^7.4.0"
+    "react-router-dom": "^7.4.0",
+    "web-vitals": "^4.2.4"
   },
   "name": "payment_frontend",
   "version": "1.0.0",
@@ -24,5 +25,6 @@
     "url": "https://github.com/Manasa9398/payment_wallet_frontend/issues"
   },
   "homepage": "https://github.com/Manasa9398/payment_wallet_frontend#readme",
+  "devDependencies": {},
   "description": ""
 }

@@ -1,28 +1,167 @@
-import { Container, Row, Col, Button, Image } from 'react-bootstrap';
+import React from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Home.css";
 
-const Welcome = () => {
+const Home = () => {
+  const moneyTransfers = [
+    { emoji: "📥", label: "Scan&Pay", link: "/ScanPay" },
+    { emoji: "💸", label: "Send Money", link: "/transaction" },
+    { emoji: "🏦", label: "Bank Transfer", link: "/Bank" },
+  ];
+
+  const topShortcuts = [
+    { emoji: "💳", label: "Cards", link: "/CreditBill" },
+    { emoji: "🏦", label: "Bank Accounts", link: "/Bank" },
+    { emoji: "⚙️", label: "UPI Settings", link: "/upi-settings" },
+  ];
+
+  const categories = [
+    {
+      emoji: "📱",
+      title: "Mobile Recharge",
+      desc: "Prepaid & Postpaid",
+      link: "/recharge",
+      badge: "20% OFF",
+    },
+    {
+      emoji: "💡",
+      title: "Electricity Bill",
+      desc: "All Providers",
+      link: "/BillPay",
+    },
+    {
+      emoji: "🏠",
+      title: "Rent Payment",
+      desc: "Pay House Rent",
+      link: "/RentPayment",
+    },
+    {
+      emoji: "🎁",
+      title: "Offers & Rewards",
+      desc: "View Cashback Deals",
+      link: "/offers",
+    },
+    {
+      emoji: "🧾",
+      title: "History",
+      desc: "All Transactions",
+      link: "/History",
+    },
+    {
+      emoji: "👛",
+      title: "My Wallet",
+      desc: "Check Balance",
+      link: "/Wallet",
+    },
+  ];
+
   return (
-    <div className="bg-light text-center py-5">
-      <Container>
-        <Row className="align-items-center">
-          <Col md={6}>
-            <h1 className="display-4">Fast & Secure Online Payments</h1>
-            <p className="lead">
-              Experience seamless transactions with PayEase. Whether you're a small business or an enterprise, our platform offers the tools you need to manage payments effortlessly.
-            </p>
-            <ul className="list-unstyled">
-              <li>✔️ Easy integration with your website or app</li>
-              <li>✔️ Accept payments globally in multiple currencies</li>
-              <li>✔️ Real-time transaction monitoring and analytics</li>
-            </ul>
-          </Col>
-          <Col md={6}>
-            <Image src="https://via.placeholder.com/500x300" alt="Online payment illustration" fluid />
-          </Col>
+    <div className="blue-bg text-black pb-5">
+      <Container className="py-4">
+        {/* Top Banner */}
+        <div className="top-banner text-center p-4 mb-4">
+          <h5 className="fw-bold text-white">Pay Credit Card Bills</h5>
+          <p className="small text-white">Fetch & Settle instantly on Fast-Pay</p>
+          <Link to="/CreditBill" className="btn btn-outline-light btn-sm rounded-pill">
+            Check Your Bill
+          </Link>
+        </div>
+
+        {/* Money Transfers */}
+        <h6 className="text-secondary mb-3">Money Transfers</h6>
+        <Row className="text-center mb-4">
+          {moneyTransfers.map((item, idx) => (
+            <Col xs={4} key={idx}>
+              <Link to={item.link} className="text-decoration-none">
+                <div className="icon-circle bg-primary text-white mx-auto mb-2">{item.emoji}</div>
+                <div className="small fw-semibold text-dark">{item.label}</div>
+              </Link>
+            </Col>
+          ))}
         </Row>
+
+        {/* Explore Services */}
+        <h6 className="text-secondary mb-3">Explore Services</h6>
+        <Row>
+          {categories.map((item, idx) => (
+            <Col xs={6} sm={4} md={4} key={idx} className="mb-3">
+              <Link to={item.link} className="text-decoration-none">
+                <Card className="category-card h-100 p-3 shadow-sm">
+                  <div className="d-flex justify-content-between align-items-start">
+                    <div>
+                      <h6 className="mb-1 text-primary fw-bold">{item.title}</h6>
+                      <p className="small text-muted mb-1">{item.desc}</p>
+                      {item.badge && (
+                        <span className="badge bg-info text-dark">{item.badge}</span>
+                      )}
+                    </div>
+                    <div style={{ fontSize: "2rem" }}>{item.emoji}</div>
+                  </div>
+                </Card>
+              </Link>
+            </Col>
+          ))}
+        </Row>
+
+        {/* Manage Payment Methods */}
+        <h6 className="text-secondary mb-3">Manage Payment Methods</h6>
+        <Row className="text-center mb-4">
+          {topShortcuts.map((item, idx) => (
+            <Col xs={4} key={idx}>
+              <Link to={item.link} className="text-decoration-none">
+                <div className="icon-circle bg-info text-white mx-auto mb-2">{item.emoji}</div>
+                <div className="small fw-semibold text-dark">{item.label}</div>
+              </Link>
+            </Col>
+          ))}
+        </Row>
+        {/* Rewards Section */}
+<h6 className="text-secondary mb-3">Rewards</h6>
+<Row className="text-center mb-4">
+  <Col xs={12}>
+    <Link to="/refer-earn" className="text-decoration-none">
+      <Card className="category-card p-3 text-start shadow-sm">
+        <div className="d-flex justify-content-between align-items-center">
+          <div>
+            <h6 className="mb-1 text-primary fw-bold">Refer & Earn</h6>
+            <p className="small text-muted mb-0">Invite friends & earn rewards</p>
+          </div>
+          <div style={{ fontSize: "2rem" }}>🎉</div>
+        </div>
+      </Card>
+    </Link>
+  </Col>
+</Row>
+
       </Container>
+
+      {/* Bottom Navigation Bar */}
+      <div className="bottom-nav">
+        <Link to="/home" className="text-center">
+          <div className="nav-icon">🏠</div>
+          <small>Home</small>
+        </Link>
+        <Link to="/recharge" className="text-center">
+          <div className="nav-icon">🔋</div>
+          <small>Recharge</small>
+        </Link>
+        <Link to="/transaction" className="text-center">
+          <div className="nav-icon">💸</div>
+          <small>Send</small>
+        </Link>
+        <Link to="/Wallet" className="text-center">
+          <div className="nav-icon">👛</div>
+          <small>Wallet</small>
+        </Link>
+        <Link to="/Profile" className="text-center">
+          <div className="nav-icon">🧾</div>
+          <small>Profile</small>
+        </Link>
+      </div>
     </div>
   );
 };
 
-export default Welcome;
+export default Home;
